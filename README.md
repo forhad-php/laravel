@@ -9,14 +9,7 @@
 - Run the command `php artisan serve` to start development server and visit the porvided link
 
 
-#0. Create a page and show it
-- Go to routes > web.php
-- Duplicate the existing code and replace the welcome to your page name. Be sure with URL. For example I want to create a page named `hello` then url should be `/hello`
-- Now go to resources > views > and duplicate the welcome page
-- Now visit the link supose `http://127.0.0.1:8000/hello`
-
-
-#0. Create and connect the database
+#1. Create and connect the database
 - First we need https://chocolatey.org/install to install MySQL in Windows
 - So click Start and search "powershell"
 - Right-click Windows Powershell and choose "Run as Administrator"
@@ -31,4 +24,16 @@ Host: localhost
 User: root
 - Click test > if connction is OK > Connect
 - To create a new database, click on the database icon > Database Name > OK > Open
-- 
+- To set database name in Laravel > .env > DB_DATABASE=databasename
+
+
+#2. Create a page and show it
+- Go to routes > web.php
+- Duplicate the existing code and replace the welcome to your page name. Be sure with URL. For example I want to create a page named `hello` then url should be `/hello`
+- Now go to resources > views > and duplicate the welcome page
+- Now visit the link supose `http://127.0.0.1:8000/hello`
+- Writ the command `php artisan make:model Hello -mc --resource` in Cmder to create Model, Controller and Resource of Hello page
+The following files will be found here →
+Database > Migrations > 2021_02_19_112725_create_hellos_table.php
+App > Models > Hello.php
+App > HTTP > Controllers > HelloController.php
