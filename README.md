@@ -30,7 +30,7 @@ User: root
 #2. Create a page and show it
 - Go to routes > web.php
 - Duplicate the existing code and replace the welcome to your page name. Be sure with URL. For example I want to create a page named `hello` then url should be `/hello`
-- Now go to resources > views > and duplicate the welcome page
+- Now go to resources > views > duplicate and rename the welcome page as `hello.blade.php`
 - Now visit the link supose `http://127.0.0.1:8000/hello`
 - Writ the command `php artisan make:model Hello -mc --resource` in Cmder to create Model, Controller and Resource of Hello page. The following files will be found here →
     1. Database > Migrations > 2021_02_19_112725_create_hellos_table.php
