@@ -17,5 +17,12 @@
 
 
 #0. Create and connect the database
+- First we need https://chocolatey.org/install
+- So click Start and type “powershell“
+- Right-click Windows Powershell and choose “Run as Administrator“
+- Run the command from https://chocolatey.org/install
+- Now we need https://chocolatey.org/packages/mysql
+- So run the command `choco install mysql` on PowerShell
+- 
 - Donwload TablePlus from https://tableplus.com/ and Install it
 - Open TablePlus > Create a new connection > MySQL > Create
