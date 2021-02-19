@@ -36,3 +36,19 @@ User: root
     1. Database > Migrations > 2021_02_19_112725_create_hellos_table.php
     2. App > Models > Hello.php
     3. App > HTTP > Controllers > HelloController.php
+
+
+#3. Creating Tables and Showing
+- First we need to create a table and input some data. So go to database > migrations > 2021_02_19_112725_create_hellos_table.php
+- Write below code →
+```php
+Schema::create('hellos', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->text('body');
+    $table->timestamps();
+});
+```
+- Run the command `php artisan migrate`
+- Now we need to redirect the Hello page to Controller. Because we do not access the databse without controller. So write this code `Route::get('/hello', 'App\Http\Controllers\HelloController@index');` into routs > web.php
+- 
