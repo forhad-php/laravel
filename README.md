@@ -30,5 +30,5 @@ Name: Example
 Host: localhost
 User: root
 - Click test > if connction is OK > Connect
-- To create a new database, click on the database icon
+- To create a new database, click on the database icon > Database Name > OK > Open
 - 
