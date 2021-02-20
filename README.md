@@ -53,7 +53,7 @@ Schema::create('hellos', function (Blueprint $table) {
 - Run the command `php artisan migrate` 
 > Note: I've faced with an error because of older version of PHP. So be sure with PHP latest version or compatible with MySQL version.
 - Tables will create in TablePlus automatically.
-> Note: If there is a problem in table, we can try with this command `php artisan migrate:fresh` to delete all tables and migration again.
+> Note: If there is a problem in table or need change someting, we can try with this command `php artisan migrate:fresh` to delete all tables and migration again.
 - Now input some data in the Hello table with TablePlus
 - Write this code `Route::get('/hello', 'App\Http\Controllers\HelloController@index');` into routs > web.php . To redirect the Hello page to Controller. Because we do not access the databse without controller.
 - Write the below code in `app > Http > Controllers` and create a view named `projects`
