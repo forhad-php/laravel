@@ -78,13 +78,13 @@ public function index()
 ```
 - Now setup a view page in `resources > views > projects.blade.php` and write the below code to view data
 ```
-<u>
+<ul>
     @foreach($projects as $project)
 
     <li><strong>Name: </strong>{{$project->name}}</li>
     <li><strong>Body Name: </strong>{{$project->body}}</li>
 
     @endforeach
-</u>
+</ul>
 ```
 - Now visit the http://127.0.0.1:8000/hello page and see result
