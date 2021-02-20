@@ -43,9 +43,18 @@ User: root
 - Write below code →
 ```php
 Schema::create('hellos', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-    $table->text('body');
+    $table->increments('id');
+    $table->string('full_name');
+    $table->integer('age');
+    $table->string('email')->unique();
+    $table->string('father_name');
+    $table->string('mother_name');
+    $table->string('present_address');
+    $table->string('permanent_address');
+    $table->string('school_name');
+    $table->string('phone_number')->unique();
+    $table->date('date_of_birth');
+    $table->string('profile_picture');
     $table->timestamps();
 });
 ```
