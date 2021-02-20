@@ -49,6 +49,7 @@ Schema::create('hellos', function (Blueprint $table) {
     $table->timestamps();
 });
 ```
+> Note: To see available column types `https://laravel.com/docs/8.x/migrations#available-column-types`
 - Run the command `php artisan migrate` 
 > Note: I've faced with an error because of older version of PHP. So be sure with PHP latest version or compatible with MySQL version.
 - Tables will create in TablePlus automatically.
