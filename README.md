@@ -50,7 +50,7 @@ Schema::create('hellos', function (Blueprint $table) {
 });
 ```
 - Run the command `php artisan migrate` 
-Note: I've faced with an error because of older version of PHP. So be sure with PHP latest version.
+> Note: I've faced with an error because of older version of PHP. So be sure with PHP latest version or compatible with MySQL version.
 - Now create table and input data via TablePlus
 - Write this code `Route::get('/hello', 'App\Http\Controllers\HelloController@index');` into routs > web.php . To redirect the Hello page to Controller. Because we do not access the databse without controller. 
 - 
