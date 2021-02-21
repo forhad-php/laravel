@@ -88,3 +88,4 @@ public function index()
 </ul>
 ```
 - Now visit the http://127.0.0.1:8000/hello page and see result
+- See how to show data in single page → https://github.com/forhad-php/laravel/blob/main/show-data-in-single-page.md
