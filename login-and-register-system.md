@@ -1,1 +1,2 @@
-- Laravel authenticaion
+- Write the command `composer require laravel/jetstream` in cmder
+- 
