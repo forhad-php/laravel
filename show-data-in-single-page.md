@@ -21,7 +21,7 @@ Previusly we are working in a student project. And all student are viewing in `r
 @endforeach
 ```
 - So we just create links for all students `<td><a href="/student/{{$learner->id}}">{{$learner->id}}</a></td>`
-- Now we need to create a single page for all students. Go to `routes > web.php` and write `Route::get('/student/{full_name}', 'App\Http\Controllers\StudentController@show');`
+- Then we need to create a single page for all students. Go to `routes > web.php` and write `Route::get('/student/{full_name}', 'App\Http\Controllers\StudentController@show');`
 - We have a controller called `StudentController.php` in `app > http > contorllers` and we write some code like below
 ```PHP
 /**
@@ -37,4 +37,24 @@ public function show(Student $student, $id)
     // Passing leaner single data to single page. learner data generated from loop.
     return view('single-student', ['learner' => $student]);
 }
+```
+- Then we need to create a view file `single-student.blade.php` for single page in `resources > views` folder and shows single data by below code
+```PHP
+<ul>
+    <li><strong>ID: </strong>{{$learner->id}}</li>
+    <li><strong>Full Name: </strong>{{$learner->full_name}}</li>
+    <li><strong>Age: </strong>{{$learner->age}}</li>
+    <li><strong>Email: </strong>{{$learner->email}}</li>
+    <li><strong>Father Name: </strong>{{$learner->father_name}}</li>
+    <li><strong>Mother Name: </strong>{{$learner->mother_name}}</li>
+    <li><strong>Present Student: </strong>{{$learner->present_address}}</li>
+    <li><strong>Permanent Address: </strong>{{$learner->permanent_address}}</li>
+    <li><strong>School Name: </strong>{{$learner->school_name}}</li>
+    <li><strong>Phone Number: </strong>{{$learner->phone_number}}</li>
+    <li><strong>Date of Birth: </strong>{{$learner->date_of_birth}}</li>
+    <li><strong>Profile Picture: </strong>{{$learner->profile_picture}}</li>
+    <li><strong>Updated Date: </strong>{{$learner->updated_at}}</li>
+</ul>
+
+<a href="/student">Back to student list..</a>
 ```
