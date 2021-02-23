@@ -1,3 +1,6 @@
+- Start a new project with Jetstream `laravel newProjectName test --jet`
+> If you decide to create a new project with JetStream Authentication then this is the best practice without any issues.
+- Adding Jetstream existing project :point_down:
 > If you’re using Windows, and you’re using Git-Bash, you might notice that composer is not recognized sometimes, even though you have it installed globally. Just switch to CMD and run the command there. After completion, it’s time to install JetStream with either Livewire or Intertia options.
 
 - So first thing is first, open `run` from windows and type `cmd` to open the `command prompt`
