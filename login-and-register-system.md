@@ -12,3 +12,17 @@
 - Execute `npm install && npm run dev` to build assets
 - Now migrate the migrations using command `php artisan migrate`
 > Note: After all we see some new tables in the database like users, sessions, password_resets etc.
+
+
+
+##  Create a menu with dashboard:
+- Go ot `resources > views > navigation-menu.blade.php` and dublicate the code below
+```
+<div class="pt-2 pb-3 space-y-1">
+    <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+        {{ __('Dashboard') }}
+    </x-jet-responsive-nav-link>
+</div>
+```
+- Run the command `php artisan make:controller TaskController --resource`
+- Adding the line `Route::resource('tasks', TaskController::class);` into `routs > web.php`
