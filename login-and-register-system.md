@@ -16,13 +16,16 @@
 
 
 ##  Create a menu with dashboard:
-- Go ot `resources > views > navigation-menu.blade.php` and dublicate the code below
+- Suppose we creat a link named `Exam`
+- Adding the line `Route::Resource('exam', App\Http\Controllers\TaskController::class);` into `routs > web.php`
+- Go ot `resources > views > navigation-menu.blade.php` → dublicate the code below and replace the dashboard with `exam`
 ```
-<div class="pt-2 pb-3 space-y-1">
-    <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+<!-- Navigation Links -->
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
-    </x-jet-responsive-nav-link>
+    </x-jet-nav-link>
 </div>
 ```
-- Run the command `php artisan make:controller TaskController --resource`
-- Adding the line `Route::resource('tasks', TaskController::class);` into `routs > web.php`
+- Run the command `php artisan make:model Exam -mc --resource`
+
