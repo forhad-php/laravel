@@ -48,4 +48,23 @@ public function index()
     </div>
 </div>
 ```
-- 
+
+
+
+##  Create a new field in registration form:
+- First, go to `resources > views > auth > register.blade.php` and create a new age field via below code
+```
+<div class="mt-4">
+    <x-jet-label for="age" value="{{ __('Age') }}" />
+    <x-jet-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
+</div>
+```
+- To create a table in database, go to `database > migrations > 2014_10_12_000000_create_users_table.php` and add this `$table->string('age');` line after any field
+- Now go to `App > Models > User.php` and add the age attribute like below
+```PHP
+protected $fillable = [
+    'name', 'email', 'age', 'password',
+];
+```
+- Then go to `App > Actions > Fortify > CreateNewUser.php` and add the line `'age' => ['required', 'string', 'max:2'],` into `Validator::make($input, [` and add another line `'age' => $input['age'],` into `return DB::transaction(function () use ($input) {`
+- Finally run the command `php artisan migrate:fresh`
