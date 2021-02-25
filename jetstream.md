@@ -1,3 +1,4 @@
+https://stackoverflow.com/questions/63827708/how-to-create-a-jetstream-project-via-composer-in-laravel-8
 - Start a new project with Jetstream `laravel new projectName --jet`
 > stack = livewire or inertia. Livewire using Tailwind CSS and inertia using vue --teams for support team options.
 - Follow https://jetstream.laravel.com/2.x/installation.html#installing-jetstream
