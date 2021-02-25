@@ -1,6 +1,5 @@
 - Start a new project with Jetstream `laravel new projectName --jet`
-> stack = livewire or inertia. 
-> Livewire using Tailwind CSS and inertia using vue --teams for support team options.
+> stack = livewire or inertia. Livewire using Tailwind CSS and inertia using vue --teams for support team options.
 - Follow https://jetstream.laravel.com/2.x/installation.html#installing-jetstream
 > If you decide to create a new project with JetStream Authentication then this is the best practice without any issues.
 - Adding Jetstream existing project :point_down:
