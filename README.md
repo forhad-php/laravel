@@ -76,6 +76,15 @@ public function index()
     return view('projects', ['projects' => $projects]);
 }
 ```
+- If you want to fetch jetstream users, use below code instead of upper code
+```PHP
+public function index()
+{
+    $users = \DB::table('users')->select('*')->get();
+
+    return view('Student')->with('users', $users);
+}
+```
 - Now setup a view page in `resources > views > projects.blade.php` and write the below code to view data
 ```
 <ul>
