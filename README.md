@@ -82,9 +82,10 @@ public function index()
 {
     $users = \DB::table('users')->select('*')->get();
 
-    return view('Student')->with('users', $users);
+    return view('student')->with('users', $users);
 }
 ```
+> Don't use uppercase into view method. Previously I got error for this
 - Now setup a view page in `resources > views > projects.blade.php` and write the below code to view data
 ```
 <ul>
