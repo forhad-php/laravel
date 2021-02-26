@@ -20,7 +20,7 @@ Route::get('/clear', function() {
 - Done!
 > Note: If again shows an error with previous access, Go to `www.example.com/clear` to clear the cacsh and try again.
 
-## 404 Page Not Found
+## 404 Not Found Error From Server (Not Laravel)
 - Go to `public_html/.htaccess` and paste below code
 ```
 RewriteEngine On
