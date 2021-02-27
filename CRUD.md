@@ -1,6 +1,6 @@
 ## First we view the data from database
 
-- First we need to login if the jetstream installed. Otherwise an error can occoure.
+> Remember: We need to login if the jetstream installed. Otherwise an error can occoure.
 - First we create a route `Route::get('/notices', 'App\Http\Controllers\NoticeController@index');` in `routes > web.php`
 - Create a folder `notices` in `resources > viwes` and also create three files `index.blade.php`, `create.blade.php`, and `edit.blade.php`
 - After all execute the command `php artisan make:model Notice -mc --resource`
@@ -44,4 +44,6 @@ public function index()
 
 
 ## Now we start CRUD oparation
+- Go to `routs > web.php` and add the line `Route::get('/create-notice', 'App\Http\Controllers\NoticeController@create');`
 - Go to `create()` method into `App > Http > Controllers > NoticeController.php` and write `return view('notices.create');`
+- Now visit the URL `http://127.0.0.1:8000/create-notice` and show `create.blade.php`
