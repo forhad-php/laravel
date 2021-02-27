@@ -43,7 +43,7 @@ public function index()
 
 
 
-## Now we start CRUD oparation
+## Now we start CRUD oparation (Create)
 - Go to `routs > web.php` and add the line `Route::get('/create-notice', 'App\Http\Controllers\NoticeController@create');`
 - Go to `create()` method into `App > Http > Controllers > NoticeController.php` and write `return view('notices.create');`
 - Now visit the URL `http://127.0.0.1:8000/create-notice` and show `create.blade.php`
@@ -84,3 +84,6 @@ public function store(Request $request)
     return redirect('/notices');
 }
 ```
+
+## CRUD oparation (Edit):
+- Go to 
