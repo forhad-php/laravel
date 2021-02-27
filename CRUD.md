@@ -31,7 +31,7 @@ public function index()
 <ul>
     @foreach($notices as $notice)
 
-    <li><strong>Name: </strong>{{$notice->say}}</li>
+    <li><strong>Notice: </strong>{{$notice->say}}</li>
 
     @endforeach
 </ul>
