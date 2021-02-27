@@ -121,7 +121,7 @@ public function edit(Notice $notice, $id) // $id comes from Routs â†’ web.php â†
     <br>
     <!-- Show the error message -->
     <span style="color: red">{{$errors->first('say')}}</span>
-    <button type="submit">Create</button>
+    <button type="submit">Update</button>
 </form>
 ```
 - Finaly write the below code into `App > Http > Controllers > NoticeController.php`
