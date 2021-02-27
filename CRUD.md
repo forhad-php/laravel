@@ -47,3 +47,4 @@ public function index()
 - Go to `routs > web.php` and add the line `Route::get('/create-notice', 'App\Http\Controllers\NoticeController@create');`
 - Go to `create()` method into `App > Http > Controllers > NoticeController.php` and write `return view('notices.create');`
 - Now visit the URL `http://127.0.0.1:8000/create-notice` and show `create.blade.php`
+- Now we create a submit form into `resources > views > projects > create.blade.php`
