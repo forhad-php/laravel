@@ -71,3 +71,19 @@ protected $fillable = [
 ```
 - Then go to `App > Actions > Fortify > CreateNewUser.php` and add the line `'age' => ['required', 'string', 'max:2'],` into `Validator::make($input, [` and add another line `'age' => $input['age'],` into `return DB::transaction(function () use ($input) {`
 - Finally run the command `php artisan migrate:fresh`
+
+
+
+##  Others Customization:
+- To customize dashboard `Resources > Views > welcome.blade.php`
+- To customize user profile welcome page go to `vendor > laravel > jetstream > resources > views > components > welcome.blade.php`
+- To get profile picture feature, comment out the line `Features::profilePhotos(),` into `config > jetstream.php` file
+- - To chagne the dashboard logo, Go to `resources > views > navigation-menu.blade.php`
+```
+<!-- Logo -->
+<div class="flex-shrink-0 flex items-center">
+    <a href="{{ route('dashboard') }}">
+        <img src="https://picsum.photos/10" class="rounded-full h-10 w-10 object-cover" />
+    </a>
+</div>
+```
