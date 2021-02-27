@@ -86,7 +86,44 @@ public function store(Request $request)
 ```
 
 ## CRUD oparation (Edit):
-- Go to 
+- Go to `Resources > Views > Notices` and we just create an Edit link through ID. Just add the below line
+```
+<a href="/notice/{{$notice->id}}/edit">Edit</a>
+```
+- Now we create a route for edit another for update. Just add the lines below into `routes > web.php`
+```
+Route::get('/notice/{id}/edit', 'App\Http\Controllers\NoticeController@edit');
+Route::put('/notice/{id}/edit', 'App\Http\Controllers\NoticeController@update');
+```
+- Add below code into `App > Http > Controllers > NoticeController.php`
+```
+public function edit(Notice $notice, $id) // $id comes from Routs → web.php → Route::get('/notice/{{id}}/edit'...
+{
+    // We need all notices from database
+    $notice = Notice::findOrFail($id);
+    // Return to edit.blade.php page with passing notice data
+    return view('notices.edit', ['notice' => $notice]);
+}
+```
+- Paste the below code into `Resources > Views > Notices > edit.blade.php`
+```
+<h2>Edit a notice</h2>
+
+<form action="/notice/{{$notice->id}}/edit" method="POST">
+    <!-- Laravel automatically generates a CSRF "token" for each active user session managed by the application. -->
+    @csrf
+    @method('PUT')
+
+    <p>
+        <label for="say"></label>
+        <textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10">{{$notice->say}}</textarea>
+    </p>
+    <br>
+    <!-- Show the error message -->
+    <span style="color: red">{{$errors->first('say')}}</span>
+    <button type="submit">Create</button>
+</form>
+```
 
 
 
@@ -95,4 +132,4 @@ public function store(Request $request)
 
 
 
-A complete CRUD oparetion tutorial here → https://www.techiediaries.com/laravel-8-crud-tutorial/
+> Note: Laravel 8 CRUD Tutorial by Example → https://www.techiediaries.com/laravel-8-crud-tutorial/ (Must be check out next time)
