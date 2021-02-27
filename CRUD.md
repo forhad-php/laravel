@@ -44,4 +44,4 @@ public function index()
 
 
 ## Now we start CRUD oparation
-- Go to `create()` method into `App > Http > Controllers > NoticeController.php` and 
+- Go to `create()` method into `App > Http > Controllers > NoticeController.php` and write `return view('notices.create');`
