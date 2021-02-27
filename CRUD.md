@@ -55,7 +55,8 @@ public function index()
     <!-- Laravel automatically generates a CSRF "token" for each active user session managed by the application. -->
     @csrf
 
-    <p><label for="say"></label><textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10"></textarea></p>
+    <!-- value="{{old('say')}}" allows to store old value from user of input field. The field doesn't empty though if the value not passed the validation and page reload  -->
+    <p><label for="say"></label><textarea value="{{old('say')}}" name="say" id="say" placeholder="Your notice.." cols="30" rows="10"></textarea></p>
     <button type="submit">Create</button>
 </form>
 ```
@@ -64,6 +65,11 @@ public function index()
 ```
 public function store(Request $request)
 {
+    // Validation
+    request()->validate([
+        'say' => 'required'
+    ]);
+
     //Create an object 'Notice'
     $notice = new Notice();
     // String the request of 'say' field into the 'say' properties
