@@ -124,7 +124,25 @@ public function edit(Notice $notice, $id) // $id comes from Routs â†’ web.php â†
     <button type="submit">Create</button>
 </form>
 ```
+- Finaly write the below code into `App > Http > Controllers > NoticeController.php`
+```
+public function update(Request $request, Notice $notice, $id) // $id must be defined as a parameter
+{
+    // Validation
+    request()->validate([
+        'say' => 'required'
+    ]);
 
+    // Find all data from database table
+    $notice = Notice::findOrFail($id);
+    // Request of 'say' field into the 'say' properties
+    $notice->say = request('say');
+    // save the request
+    $notice->save();
+    // redirect to notices/index.blade.php
+    return redirect('/notices');
+}
+```
 
 
 
