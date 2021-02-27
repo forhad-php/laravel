@@ -60,4 +60,17 @@ public function index()
 </form>
 ```
 - Then we create another route into `routs > web.php` called `Route::post('/create-notice', 'App\Http\Controllers\NoticeController@store');`
-- Then under `store()` method of `app > http > controllers > NoticeController.php` file we write
+- Now we work under `store()` method of `app > http > controllers > NoticeController.php` file. Write the below code
+```
+public function store(Request $request)
+{
+    //Create an object 'Notice'
+    $notice = new Notice();
+    // String the request of 'say' field into the 'say' properties
+    $notice->say = request('say');
+    // save the request
+    $notice->save();
+    // redirect to notices/index.blade.php
+    return redirect('/notices');
+}
+```
