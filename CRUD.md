@@ -87,3 +87,12 @@ public function store(Request $request)
 
 ## CRUD oparation (Edit):
 - Go to 
+
+
+
+
+
+
+
+
+A complete CRUD oparetion tutorial here → https://www.techiediaries.com/laravel-8-crud-tutorial/
