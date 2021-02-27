@@ -47,4 +47,17 @@ public function index()
 - Go to `routs > web.php` and add the line `Route::get('/create-notice', 'App\Http\Controllers\NoticeController@create');`
 - Go to `create()` method into `App > Http > Controllers > NoticeController.php` and write `return view('notices.create');`
 - Now visit the URL `http://127.0.0.1:8000/create-notice` and show `create.blade.php`
-- Now we create a submit form into `resources > views > projects > create.blade.php`
+- Now we create a submit form into `resources > views > projects > create.blade.php` through below code
+```
+<h2>Create a notice</h2>
+
+<form action="/create-notice" method="POST">
+    <!-- Laravel automatically generates a CSRF "token" for each active user session managed by the application. -->
+    @csrf
+
+    <p><label for="say"></label><textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10"></textarea></p>
+    <button type="submit">Create</button>
+</form>
+```
+- Then we create another route into `routs > web.php` called `Route::post('/create-notice', 'App\Http\Controllers\NoticeController@store');`
+- Then under `store()` method of `app > http > controllers > NoticeController.php` file we write
