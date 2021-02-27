@@ -152,9 +152,13 @@ public function update(Request $request, Notice $notice, $id) // $id must be def
 - Add the line below into `index.blade.php` file
 ```
 <!-- Create a Delete link through ID -->
-<a href="/notice/{{$notice->id}}/delete">Delete</a>
+<form onSubmit="return confirm('Do you want to delete?')" action="/notice/{{$notice->id}}/delete" method="POST">
+    @csrf
+
+    <button type="submit">Delete</button>
+</form>
 ```
-- Then add the line `Route::get('/notice/{id}/delete', 'App\Http\Controllers\NoticeController@destroy');` into `web.php` file
+- Then add the line `Route::post('/notice/{id}/delete', 'App\Http\Controllers\NoticeController@destroy');` into `web.php` file
 > Remenber: Again every time create a route if there any error just execute `php artisan route:cache`
 - Finally add the code below into `NoticeController.php` file
 ```
