@@ -57,6 +57,9 @@ public function index()
 
     <!-- value="{{old('say')}}" allows to store old value from user of input field. The field doesn't empty though if the value not passed the validation and page reload  -->
     <p><label for="say"></label><textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10">{{old('say')}}</textarea></p>
+    <br>
+    <!-- Show the error message -->
+    <span style="color: red">{{$errors->first('say')}}</span>
     <button type="submit">Create</button>
 </form>
 ```
