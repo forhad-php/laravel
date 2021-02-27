@@ -1,8 +1,10 @@
+## First we view the data from database
+
 - First we need to login if the jetstream installed. Otherwise an error can occoure.
 - First we create a route `Route::get('/notices', 'App\Http\Controllers\NoticeController@index');` in `routes > web.php`
-- And create a file in `Resource > views > notices.blade.php`
+- Create a folder `notices` in `resources > viwes` and also create three files `index.blade.php`, `create.blade.php`, and `edit.blade.php`
 - After all execute the command `php artisan make:model Notice -mc --resource`
-- Now we have -
+- Now we have →
 1. Database > Migrations > 2021_02_19_112725_create_notices_table.php
 2. App > Models > Notice.php
 3. App > HTTP > Controllers > NoticeController.php
@@ -23,10 +25,11 @@ public function index()
     $notices = Notice::latest()->get();
 
     // return $notices into view page as a 'notices' object
-    return view('notices', ['notices' => $notices]);
+    return view('/notices.index', ['notices' => $notices]);
+    // Because we create a folder named `notices` and the `.index` mean `index.blade.php` file
 }
 ```
-- Finally we view the data into `resources > views > notices.blade.php` through below code
+- Finally we view the data into `resources > views > notices > index.blade.php` through below code
 ```
 <ul>
     @foreach($notices as $notice)
@@ -39,8 +42,6 @@ public function index()
 > Note: If any error faces, Execute the command `php artisan route:cache` first
 
 
+
 ## Now we start CRUD oparation
-- First of all create a folder `notices` in `resources > viwes` and also create three files `index.blade.php`, `create.blade.php`, and `edit.blade.php`
-- Edited the line `return view('/notices.index', ['notices' => $notices]);` into `app > http > controllers > NoticeController.php`
-> Because we create a folder named `notices` and the `.index` mean index file
-- Now go to `create()` method into `App > Http > Controllers > NoticeController.php` and 
+- Go to `create()` method into `App > Http > Controllers > NoticeController.php` and 
