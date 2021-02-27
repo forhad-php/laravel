@@ -42,3 +42,4 @@ public function index()
 ## Now we start CRUD oparation
 - First of all create a folder `notices` in `resources > viwes` and also create two files `create.blade.php` and `edit.blade.php`
 - Edited the line `return view('/notices.index', ['notices' => $notices]);` into `app > http > controllers > NoticeController.php`
+> Because we create a folder named `notices` and the `.index` mean index file
