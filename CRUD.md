@@ -36,3 +36,4 @@ public function index()
     @endforeach
 </ul>
 ```
+> Note: If any error faces, Execute the command `php artisan route:cache` first
