@@ -85,6 +85,8 @@ public function store(Request $request)
 }
 ```
 
+
+
 ## CRUD oparation (Edit):
 - Go to `Resources > Views > Notices` and we just create an Edit link through ID. Just add the below line
 ```
@@ -146,7 +148,29 @@ public function update(Request $request, Notice $notice, $id) // $id must be def
 
 
 
+## CRUD oparation (Delete):
+- Add the line below into `index.blade.php` file
+```
+<!-- Create a Delete link through ID -->
+<a href="/notice/{{$notice->id}}/delete">Delete</a>
+```
+- Then add the line `Route::get('/notice/{id}/delete', 'App\Http\Controllers\NoticeController@destroy');` into `web.php` file
+> Remenber: Again every time create a route if there any error just execute `php artisan route:cache`
+- Finally add the code below into `NoticeController.php` file
+```
+public function destroy(Notice $notice, $id) // $id must be defined as a parameter
+// $id comes from Routs → web.php → Route::get('/notice/{{id}}/edit'...
+{
+    // Find all data from database table
+    $notice = Notice::findOrFail($id);
 
+    // Delete the request
+    $notice->delete();
+
+    // redirect to notices/index.blade.php
+    return redirect('/notices');
+}
+```
 
 
 
