@@ -37,3 +37,8 @@ public function index()
 </ul>
 ```
 > Note: If any error faces, Execute the command `php artisan route:cache` first
+
+
+## Now we start CRUD oparation
+- First of all create a folder `notices` in `resources > viwes` and also create two files `create.blade.php` and `edit.blade.php`
+- Edited the line `return view('/notices.index', ['notices' => $notices]);` into `app > http > controllers > NoticeController.php`
