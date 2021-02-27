@@ -56,10 +56,11 @@ public function index()
     @csrf
 
     <!-- value="{{old('say')}}" allows to store old value from user of input field. The field doesn't empty though if the value not passed the validation and page reload  -->
-    <p><label for="say"></label><textarea value="{{old('say')}}" name="say" id="say" placeholder="Your notice.." cols="30" rows="10"></textarea></p>
+    <p><label for="say"></label><textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10">{{old('say')}}</textarea></p>
     <button type="submit">Create</button>
 </form>
 ```
+> Note: Example of old value storing on input field = `<input type="text" name="title" id="title" value="{{old('title')}}">`
 - Then we create another route into `routs > web.php` called `Route::post('/create-notice', 'App\Http\Controllers\NoticeController@store');`
 - Now we work under `store()` method of `app > http > controllers > NoticeController.php` file. Write the below code
 ```
