@@ -92,6 +92,16 @@ protected $fillable = [
 > Note: This code block you can find out at `Resources > Views > welcome.blade.php`
 
 
+## Check If Current User Has This Email
+```
+@if (Auth::user()->email == 'admin@admin.com')
+Hello Admin!
+@else
+No access!
+@endif
+```
+
+
 ##  Others Customization:
 - To customize dashboard `Resources > Views > welcome.blade.php`
 - To customize user profile welcome page go to `vendor > laravel > jetstream > resources > views > components > welcome.blade.php`
