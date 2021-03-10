@@ -56,7 +56,12 @@ public function index()
     @csrf
 
     <!-- value="{{old('say')}}" allows to store old value from user of input field. The field doesn't empty though if the value not passed the validation and page reload  -->
-    <p><label for="say"></label><textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10">{{old('say')}}</textarea></p>
+    <p>
+        <!-- <label for="title">Notice Title: </label>
+        <input type="text" name="title" id="title" placeholder="Title" value="{{old('title')}}"> -->
+        
+        <label for="say"></label>
+        <textarea name="say" id="say" placeholder="Your notice.." cols="30" rows="10">{{old('say')}}</textarea></p>
     <br>
     <!-- Show the error message -->
     <span style="color: red">{{$errors->first('say')}}</span>
