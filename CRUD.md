@@ -84,6 +84,7 @@ public function store(Request $request)
     return redirect('/notices');
 }
 ```
+- We just need to visit - `http://127.0.0.1:8000/create-notice`
 
 
 
