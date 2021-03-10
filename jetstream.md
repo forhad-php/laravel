@@ -115,6 +115,10 @@ No access!
     </a>
 </div>
 ```
+
+
+
+## Error:
 > Note: Previously I've found an error like below,
 ```
 ErrorException
