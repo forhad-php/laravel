@@ -12,7 +12,7 @@
 ```
 Schema::create('notices', function (Blueprint $table) {
     $table->id();
-    $table->string('say');
+    $table->string('say', 3000); // This is post field, thats why we allow 3000 words!
     $table->timestamps();
 });
 ```
