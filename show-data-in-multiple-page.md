@@ -36,3 +36,15 @@ And in `welcome.blade.php` we just write below code to display the data
     </tr>
 @endforeach
 ```
+
+After all we just query the table and pass into the welcome page. So we need to go `routes > web.php` and paste below code,
+
+```
+Route::get('/', function () {
+
+    $notices = DB::table('notices')->get();
+
+    return view('welcome', ['notices' => $notices]);
+
+});
+```
