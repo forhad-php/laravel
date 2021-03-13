@@ -48,3 +48,15 @@ Route::get('/', function () {
 
 });
 ```
+
+I just show last single data from the table. So I wrote the below code,
+
+```
+Route::get('/', function () {
+
+    $notices = DB::table('notices')->latest()->take(1)->get();
+
+    return view('welcome', ['notices' => $notices]);
+
+});
+```
