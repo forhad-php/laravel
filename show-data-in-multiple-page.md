@@ -1,7 +1,7 @@
 
 Previusly we used the below code in `App > Http > Controllers > NoticeController.php`
 
-```
+```PHP
 public function index()
 {
     // Get all data from Project table
@@ -14,7 +14,7 @@ public function index()
 
 And we need to view same data in `welcome` page. So add this `View::share('welcome', $notices);` single line in the existing code. The final code below,
 
-```
+```PHP
 public function index()
 {
     // Get all data from Project table
@@ -29,7 +29,7 @@ public function index()
 
 And in `welcome.blade.php` we just write below code to display the data
 
-```
+```PHP
 @foreach($notices as $notice)
     <tr>
         <th>{{$notice->say}}</th>
@@ -39,7 +39,7 @@ And in `welcome.blade.php` we just write below code to display the data
 
 After all we just query the table and pass into the welcome page. So we need to go `routes > web.php` and paste below code,
 
-```
+```PHP
 Route::get('/', function () {
 
     $notices = DB::table('notices')->get();
@@ -51,7 +51,7 @@ Route::get('/', function () {
 
 I just show last single data from the table. So I wrote the below code,
 
-```
+```PHP
 Route::get('/', function () {
 
     $notices = DB::table('notices')->latest()->take(1)->get();
