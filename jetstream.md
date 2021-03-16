@@ -116,4 +116,10 @@ No access!
 </div>
 ```
 - To Change Registration From Logo Go `/resources/views/auth/register.blade.php`
-- To Change Login Form Logo Go `Project-Name/vendor/laravel/jetstream/stubs/livewire/resources/views/auth/login.blade.php`
+- To Change Login Form Logo Go `/resources/views/auth/login.blade.php` and changes like below -
+
+```HTML
+<x-slot name="logo">
+    <img src="https://mrta2020.com/img/Logo-150x150.jpg">
+</x-slot>
+```
