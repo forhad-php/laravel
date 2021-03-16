@@ -115,3 +115,5 @@ No access!
     </a>
 </div>
 ```
+- To Change Registration From Logo Go `/resources/views/auth/register.blade.php`
+- To Change Login Form Logo Go `Project-Name/vendor/laravel/jetstream/stubs/livewire/resources/views/auth/login.blade.php`
