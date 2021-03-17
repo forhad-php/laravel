@@ -19,3 +19,7 @@ Route::get('/img', function()
 ```
 - An image named `wordpress-code-poetry.jpg` exist in `Project-Name > Public` folder.
 - Execute `php artisan route:cache` command and Visit: http://127.0.0.1:8000/img and see the result.
+
+> Note: Full Blog Creating Tutorial =
+> https://www.ryansutana.name/2017/07/how-to-create-a-blog-with-laravel-5-part-1-file-structure-templating/ (Blog series 5 parts)
+> https://www.ryansutana.name/2017/08/how-to-upload-image-for-blog-post-in-laravel-5/ (Only for thumbnail image)
