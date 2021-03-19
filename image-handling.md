@@ -1,6 +1,6 @@
 - First we need "Intervention Image" which is a PHP image handling and manipulation library. So execute the command - `composer require intervention/image`
 > Note: Package Documentation: http://image.intervention.io/getting_started/installation and a tutorial here https://www.youtube.com/watch?v=h0EwH5Jjctk
-- Open config/app.php file and scroll down below in `'providers' => [...]` array add the below line of code.
+- Open `config > app.php` file and scroll down below in `'providers' => [...]` array add the below line of code.
 ```PHP
 Intervention\Image\ImageServiceProvider::class
 ```
